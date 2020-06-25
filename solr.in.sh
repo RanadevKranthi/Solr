@@ -141,22 +141,22 @@
 
 # Enables HTTPS. It is implictly true if you set SOLR_SSL_KEY_STORE. Use this config
 # to enable https module with custom jetty configuration.
-SOLR_SSL_ENABLED=true
+#SOLR_SSL_ENABLED=true
 # Uncomment to set SSL-related system properties
 # Be sure to update the paths to the correct keystore for your environment
-SOLR_SSL_KEY_STORE=/var/solr/data/solr-ssl.keystore.p12
-SOLR_SSL_KEY_STORE_PASSWORD=secret
-SOLR_SSL_TRUST_STORE=/var/solr/data/solr-ssl.keystore.p12
-SOLR_SSL_TRUST_STORE_PASSWORD=secret
+#SOLR_SSL_KEY_STORE=/var/solr/data/solr-ssl.keystore.p12
+#SOLR_SSL_KEY_STORE_PASSWORD=secret
+#SOLR_SSL_TRUST_STORE=/var/solr/data/solr-ssl.keystore.p12
+#SOLR_SSL_TRUST_STORE_PASSWORD=secret
 # Require clients to authenticate
-SOLR_SSL_NEED_CLIENT_AUTH=false
+#SOLR_SSL_NEED_CLIENT_AUTH=false
 # Enable clients to authenticate (but not require)
-SOLR_SSL_WANT_CLIENT_AUTH=false
+#SOLR_SSL_WANT_CLIENT_AUTH=false
 # Verify client's hostname during SSL handshake
-SOLR_SSL_CLIENT_HOSTNAME_VERIFICATION=false
+#SOLR_SSL_CLIENT_HOSTNAME_VERIFICATION=false
 # SSL Certificates contain host/ip "peer name" information that is validated by default. Setting
 # this to false can be useful to disable these checks when re-using a certificate on many hosts
-SOLR_SSL_CHECK_PEER_NAME=true
+#SOLR_SSL_CHECK_PEER_NAME=true
 # Override Key/Trust Store types if necessary
 #SOLR_SSL_KEY_STORE_TYPE=PKCS12
 #SOLR_SSL_TRUST_STORE_TYPE=PKCS12
@@ -185,8 +185,8 @@ SOLR_SSL_CHECK_PEER_NAME=true
 # Settings for authentication
 # Please configure only one of SOLR_AUTHENTICATION_CLIENT_BUILDER or SOLR_AUTH_TYPE parameters
 #SOLR_AUTHENTICATION_CLIENT_BUILDER="org.apache.solr.client.solrj.impl.PreemptiveBasicAuthClientBuilderFactory"
-#SOLR_AUTH_TYPE="basic"
-#SOLR_AUTHENTICATION_OPTS="-Dbasicauth=solr:SolrRocks"
+SOLR_AUTH_TYPE="basic"
+SOLR_AUTHENTICATION_OPTS="-Dbasicauth=solr:SolrRocks"
 
 # Settings for ZK ACL
 #SOLR_ZK_CREDS_AND_ACLS="-DzkACLProvider=org.apache.solr.common.cloud.VMParamsAllAndReadonlyDigestZkACLProvider \
@@ -226,7 +226,7 @@ SOLR_SSL_CHECK_PEER_NAME=true
 # Runtime properties are passed to the security policy file (server/etc/security.policy)
 # You can also tweak via standard JDK files such as ~/.java.policy, see https://s.apache.org/java8policy
 # This is experimental! It may not work at all with Hadoop/HDFS features.
-#SOLR_SECURITY_MANAGER_ENABLED=false
+#:q!SOLR_SECURITY_MANAGER_ENABLED=false
 SOLR_PID_DIR="/var/solr"
 SOLR_HOME="/var/solr/data"
 LOG4J_PROPS="/var/solr/log4j2.xml"
